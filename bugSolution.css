@@ -1,0 +1,24 @@
+/* Correct usage of calc() with percentages and other units */
+#container {
+  width: 50%;
+  /* Correct calculation to get the remaining 50% - 100px */
+  margin-left: calc(50% - 100px);
+  /* Avoid unnecessary calculation by using simple percentage */
+  margin-right: 5%;
+}
+/* If you need to make the 100px width relative to the container's own width */
+#container {
+  width: 50%;
+  margin-left: calc(50% - 10vw);
+}
+/*Another solution to avoid issues */
+#container {
+  width: 50%;
+  margin-left: 25%;
+  margin-left: calc(25% - 100px);
+}
+/*If you want to keep the container's width relative to the viewport, you need to use vw or vh units.*/
+#container {
+  width: 50vw;
+  margin-left: calc(50% - 100px);
+}
